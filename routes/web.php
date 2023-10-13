@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Student_controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -81,3 +82,4 @@ Route::prefix('ganti-disini-prefix~')->group(function(){
     // php artisan route:list -> jalankan di terminal untuk melihat daftar route yang dibuat
 });
 
+Route::get('/students', [Student_controller::class, 'index']);

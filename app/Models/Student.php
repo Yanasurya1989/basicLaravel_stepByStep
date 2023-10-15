@@ -14,5 +14,9 @@ class Student extends Model
     // public $incrementing = false ; //ini untuk setup bahwa table yang digunakan tidak auto_increment
     // protected $keyType = 'string'; //jika id yg digunakan bukan integer 
     // public $timestamps = false; //ini diperlukan jika di table tidak ada created_at dan updated_at
+
+    protected $fillable = [
+        'name', 'gender', 'nis', 'class_id'
+    ];
 }
 

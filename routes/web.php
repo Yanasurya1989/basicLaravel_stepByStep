@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ClassRoom_controller;
+use App\Http\Controllers\Extracurriculer_controller;
 use App\Http\Controllers\Student_controller;
+use App\Http\Controllers\Teacher_controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -85,3 +87,5 @@ Route::prefix('ganti-disini-prefix~')->group(function(){
 
 Route::get('/students', [Student_controller::class, 'index']);
 Route::get('/class', [ClassRoom_controller::class, 'index']);
+Route::get('/extracurriculer', [Extracurriculer_controller::class, 'index']);
+Route::get('/teacher', [Teacher_controller::class, 'index']);

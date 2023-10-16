@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ClassRoom;
+use App\Models\Extracurriculer;
 use Illuminate\Http\Request;
 
-class ClassRoom_controller extends Controller
+class Extracurriculer_controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +14,10 @@ class ClassRoom_controller extends Controller
      */
     public function index()
     {
-        // lazy load
-        // $rombel = ClassRoom::with('students')->get();
-        // return view('classroom', ['rombonganBelajar' => $rombel]);
-        
-        // eager load
-        $rombel = ClassRoom::with('students','homeroomTeacher')->get();
-        return view('classroom', ['rombonganBelajar' => $rombel]);
+        $ekskul = Extracurriculer::with('students')->get();
+        // dd($ekskul);
+        // return view('extracurriculer', compact('ekskul'));
+        return view('extracurriculer', ['eksakulList' => $ekskul]);
     }
 
     /**
@@ -47,10 +44,10 @@ class ClassRoom_controller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ClassRoom  $classRoom
+     * @param  \App\Models\Extracurriculer  $extracurriculer
      * @return \Illuminate\Http\Response
      */
-    public function show(ClassRoom $classRoom)
+    public function show(Extracurriculer $extracurriculer)
     {
         //
     }
@@ -58,10 +55,10 @@ class ClassRoom_controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ClassRoom  $classRoom
+     * @param  \App\Models\Extracurriculer  $extracurriculer
      * @return \Illuminate\Http\Response
      */
-    public function edit(ClassRoom $classRoom)
+    public function edit(Extracurriculer $extracurriculer)
     {
         //
     }
@@ -70,10 +67,10 @@ class ClassRoom_controller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ClassRoom  $classRoom
+     * @param  \App\Models\Extracurriculer  $extracurriculer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ClassRoom $classRoom)
+    public function update(Request $request, Extracurriculer $extracurriculer)
     {
         //
     }
@@ -81,10 +78,10 @@ class ClassRoom_controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ClassRoom  $classRoom
+     * @param  \App\Models\Extracurriculer  $extracurriculer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ClassRoom $classRoom)
+    public function destroy(Extracurriculer $extracurriculer)
     {
         //
     }

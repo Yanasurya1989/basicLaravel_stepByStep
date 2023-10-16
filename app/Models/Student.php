@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Extracurriculer;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Student extends Model
 {
@@ -18,5 +19,16 @@ class Student extends Model
     protected $fillable = [
         'name', 'gender', 'nis', 'class_id'
     ];
+
+    public function class(){
+        // return $this->belongsTo(ClassRoom::class, 'selainNamaTableReferensi_id', 'id'); //ini jika nama foreign key bukan merupakan nama dari tabel referensi (ex : class_id)
+        return $this->belongsTo(ClassRoom::class); //jenis relation many to one
+    }
+
+    
+    public function extracurriculers()
+    {
+        return $this->belongsToMany(Extracurriculer::class, 'student_extracurriculer', 'student_id', 'extracurriculer_id');
+    }
 }
 

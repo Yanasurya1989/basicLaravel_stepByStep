@@ -13,6 +13,7 @@
     <thead>
         <tr>
             <th>No</th>
+            <th>Kelas</th>
             <th>Name</th>
         </tr>
     </thead>
@@ -21,6 +22,14 @@
             <tr>
                 <td>{{$loop->iteration}}</td>
                 <td>{{$data->name}}</td>
+                {{-- <td>{{$data->students}}</td> --}}
+                <td>
+                    @foreach ($data->students as $list)
+                        -{{$list->name}} <br>
+                        {{-- -{{$list['name']}} <br> --}}
+                    @endforeach
+                </td>
+                <td>{{$data->homeroomTeacher['name']}}</td>
             </tr>
         @endforeach
     </tbody>

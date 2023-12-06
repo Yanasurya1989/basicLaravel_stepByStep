@@ -17,7 +17,7 @@ return new class extends Migration
             // $table->id();
             // $table->timestamps();
             $table->unsignedBigInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('restrict');//onDelete berfugnsi agar tidak bisa dihapus ketika data sudah digunakan pada table lain
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('restrict');//onDelete berfungsi agar tidak bisa dihapus ketika data sudah digunakan pada table lain
             
             $table->unsignedBigInteger('extracurriculer_id');
             $table->foreign('extracurriculer_id')->references('id')->on('extracurriculers')->onDelete('restrict');

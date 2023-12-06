@@ -37,6 +37,7 @@
                         - {{$list->name}} <br>
                     @endforeach
                 </td>
+                {{-- <td>{{$data->class}}</td> --}}
                 <td>{{$data->class->homeroomTeacher->name}}</td>
             </tr>
             
